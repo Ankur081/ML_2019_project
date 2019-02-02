@@ -1,10 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-Created on Thu Dec 27 04:26:08 2018
 
-@author: nilesh
-"""
 #importing libraries
 import cv2,os
 import numpy as np
@@ -34,7 +30,7 @@ for i in folder_name:
         print(image_path)
     
         #reading image data in gray fromat
-        face_data=cv2.imread(image_path,0)
+        face_data=cv2.imread(image_path,1)
         faces=cascade.detectMultiScale(face_data,1.5,5)
         print(faces)
         for (x,y,w,h) in faces:
