@@ -1,17 +1,13 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-Created on Thu Dec 27 05:19:44 2018
 
-@author: nilesh
-"""
 #importing libraries
 import cv2,time,os,datetime
 import numpy as np
 
 def save_att(student_id):
     #present=0
-    print("hhhhh")
+    print("prsent hai banda")
     d=datetime.date.today()
     ids=[]
     file_name=d.strftime("%d_%B"+".txt")
@@ -54,7 +50,6 @@ cascade=cv2.CascadeClassifier('face.xml')
 height = 480
 os.environ["OPENCV_FFMPEG_CAPTURE_OPTIONS"] = "rtsp_transport;udp"
 cam=cv2.VideoCapture("rtsp://192.168.10.240:554/onvif1",cv2.CAP_FFMPEG)
-
 cam.set(3,width)
 cam.set(4,height)
 '''
@@ -79,9 +74,9 @@ while cam.isOpened():
         if confidence<70:
             save_att(label)
             if label==1:
-                msg="salman"
+                msg="ankita"
             elif label==0:
-                msg="nilesh"
+                msg="ankuraj"
             
             #printing the message 
             #cv2.putText(frame,msg,(x,y),font,1,(255,255,255),3,cv2.LINE_AA)
@@ -98,13 +93,3 @@ while cam.isOpened():
       #  break
 cv2.destroyAllWindows()
 cam.release()
-
-
-            
-        
-    
-    
-    
-    
-    
-    
