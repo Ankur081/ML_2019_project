@@ -1,10 +1,5 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-Created on Thu Dec 27 03:44:34 2018
-
-@author: nilesh
-"""
 #importing libraries
 import cv2,os
 import numpy as np
@@ -43,7 +38,7 @@ def image_taker(dir_name,student_id):
     #handler
         if cv2.waitKey(50) & 0xFF==ord('q'):
             break
-        elif cv2.waitKey(50) & counter>=20:
+        elif cv2.waitKey(50) & counter>=10:
             student_id=student_id+1
             break
         
@@ -63,7 +58,7 @@ while(choice=='y'):
         labels=np.load('training_ids.npy')
         student_id=max(labels)+1
     except:
-        student_id=0
+        student_id=1
 
 
     print(student_id)
